@@ -293,28 +293,67 @@ h1, h2, h3, .logo {
     color: var(--text-muted);
 }
 
-/* Courses */
-.courses-tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 40px;
+/* Courses Section */
+.section-lead {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: -30px auto 50px;
 }
 
-.courses-tags span {
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.course-card {
     background: var(--secondary-bg);
-    padding: 12px 25px;
-    border-radius: 50px;
-    border: 1px solid var(--primary-gold);
-    font-weight: 500;
+    padding: 35px 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition);
-    cursor: default;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.courses-tags span:hover {
+.course-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-gold);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.course-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.course-card:hover .course-icon {
     background: var(--primary-gold);
     color: var(--bg-color);
+}
+
+.course-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.course-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 /* Booking */
@@ -491,6 +530,113 @@ input:focus, textarea:focus {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Course Outline Page Styles */
+.outline-page {
+    padding: 120px 0;
+    min-height: 80vh;
+}
+
+.outline-header {
+    margin-bottom: 60px;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: var(--secondary-bg);
+    padding: 2px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.outline-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    text-align: left;
+}
+
+.outline-table th {
+    background: rgba(251, 191, 36, 0.1);
+    color: var(--primary-gold);
+    padding: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--primary-gold);
+}
+
+.outline-table td {
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: top;
+    color: var(--text-muted);
+}
+
+.outline-table tr:last-child td {
+    border-bottom: none;
+}
+
+.outline-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-light);
+}
+
+.topic-cell {
+    font-weight: 600;
+    color: var(--primary-gold) !important;
+    width: 25%;
+}
+
+.level-row {
+    background: rgba(251, 191, 36, 0.05);
+}
+
+.level-row td {
+    color: var(--primary-gold) !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid var(--primary-gold);
+}
+
+.back-btn {
+    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    transform: translateX(-10px);
+}
+
+.course-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.view-outline-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.course-card:hover .view-outline-link {
+    text-decoration: underline;
 }
 
 /* Responsive */
